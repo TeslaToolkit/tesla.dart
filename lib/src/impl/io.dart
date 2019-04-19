@@ -27,11 +27,15 @@ class TeslaClientImpl extends TeslaHttpClient {
   final HttpClient client;
 
   @override
-  Future<dynamic> sendHttpRequest(String url,
-      {bool needsToken: true,
-      String extract,
-      Map<String, dynamic> body}) async {
+  Future<dynamic> sendHttpRequest(
+    String url, {
+    bool needsToken: true,
+    String extract,
+    Map<String, dynamic> body,
+    bool tesla = false,
+  }) async {
     var uri = endpoints.ownersApiUrl.resolve(url);
+    if (tesla) uri = endpoints.teslaApiUl.resolve(url);
 
     if (endpoints.enableProxyMode) {
       uri = uri.replace(queryParameters: {"__tesla": "api"});

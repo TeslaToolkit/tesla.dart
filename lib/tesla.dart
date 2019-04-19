@@ -41,3 +41,4 @@ part 'src/types/media_state.dart';
 part 'src/types/speed_limit_mode.dart';
 part 'src/types/seat_heater.dart';
 part 'src/types/vehicle_state.dart';
+part 'src/types/supercharger.dart';

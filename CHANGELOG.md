@@ -1,15 +1,14 @@
 # Tesla.dart Changelog
 
-## v0.0.1
+## v0.1.2
 
-- Initial Version: No documentation.
+- Added `listSuperchargers()`
 
-## v0.0.2
+## v0.0.4
 
-- Abstract API and cleanup.
-- Option code support.
-- Support for software updates.
-- Multi-platform support.
+- Rework HTTP implementation to share code more.
+- Allow using BASE64-encoded passwords for the standard tool API.
+- Fix a bug with typing.
 
 ## v0.0.3
 
@@ -18,8 +17,13 @@
 - Rename `OptionCode` to `VehicleOptionCode`.
 - Basic support for the browser (requires an API proxy).
 
-## v0.0.4
+## v0.0.2
 
-- Rework HTTP implementation to share code more.
-- Allow using BASE64-encoded passwords for the standard tool API.
-- Fix a bug with typing.
+- Abstract API and cleanup.
+- Option code support.
+- Support for software updates.
+- Multi-platform support.
+
+## v0.0.1
+
+- Initial Version: No documentation.

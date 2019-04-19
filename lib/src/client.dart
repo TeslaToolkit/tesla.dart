@@ -32,6 +32,8 @@ abstract class TeslaClient {
       {Map<String, dynamic> params});
   Future<Vehicle> wake(int id);
 
+  Future<List<Supercharger>> listSuperchargers();
+
   Future<SummonClient> summon(int vehicleId, String token);
 
   Future close();
