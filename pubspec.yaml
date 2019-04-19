@@ -1,6 +1,6 @@
 name: tesla
 description: "Control and monitor Tesla Products"
-version: 0.0.5-dev
+version: 0.1.1
 homepage: "https://github.com/SpinlockLabs/tesla.dart"
 authors:
 - "Kenneth Endfinger <kaendfinger@gmail.com>"

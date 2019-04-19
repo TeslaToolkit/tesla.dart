@@ -25,7 +25,10 @@ class Vehicle implements TeslaObject {
 
   String get color => json["color"];
   List<String> get tokens =>
-      (json["tokens"] as List).where((it) => it is String).toList();
+      (json["tokens"] as List)
+      .where((it) => it is String)
+      .map((it) => it as String)
+      .toList();
   String get state => json["state"];
   bool get isInService => json["in_service"];
   String get idString => json["id_s"];

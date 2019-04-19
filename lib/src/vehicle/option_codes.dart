@@ -13,6 +13,12 @@ class VehicleOptionCode {
   static const VehicleOptionCode MDLS =
       const VehicleOptionCode("MDLS", "Model S");
   // ignore: constant_identifier_names
+  static const VehicleOptionCode MS03 =
+      const VehicleOptionCode("MS03", "Model S");
+  // ignore: constant_identifier_names
+  static const VehicleOptionCode MS04 =
+      const VehicleOptionCode("MS04", "Model S");
+  // ignore: constant_identifier_names
   static const VehicleOptionCode MDLX =
       const VehicleOptionCode("MDLX", "Model X");
   // ignore: constant_identifier_names
@@ -42,6 +48,8 @@ class VehicleOptionCode {
   // ignore: constant_identifier_names
   static const VehicleOptionCode AD07 =
       const VehicleOptionCode("AD07", "Red IEC309 (3 phase, 400V 16A)");
+  // ignore: constant_identifier_names
+  static const VehicleOptionCode AD15 = const VehicleOptionCode("AD15", "?");
   // ignore: constant_identifier_names
   static const VehicleOptionCode ADPX2 =
       const VehicleOptionCode("ADPX2", "Type 2 Public Charging Connector");
@@ -261,6 +269,9 @@ class VehicleOptionCode {
   // ignore: constant_identifier_names
   static const VehicleOptionCode HP01 =
       const VehicleOptionCode("HP01", "HPWC Ordered");
+  // ignore: constant_identifier_names
+  static const VehicleOptionCode ID3W =
+      const VehicleOptionCode("ID3W", "(Model 3) Wood Decor");
   // ignore: constant_identifier_names
   static const VehicleOptionCode IDBA =
       const VehicleOptionCode("IDBA", "Dark Ash Wood Decor");
@@ -738,6 +749,8 @@ class VehicleOptionCode {
 
   static const List<VehicleOptionCode> values = const <VehicleOptionCode>[
     MDLS,
+    MS03,
+    MS04,
     MDLX,
     MDL3,
     RENA,
@@ -748,6 +761,7 @@ class VehicleOptionCode {
     AD05,
     AD06,
     AD07,
+    AD15,
     ADPX2,
     ADX8,
     AF00,
@@ -822,6 +836,7 @@ class VehicleOptionCode {
     HC01,
     HP00,
     HP01,
+    ID3W,
     IDBA,
     IDBO,
     IDCF,

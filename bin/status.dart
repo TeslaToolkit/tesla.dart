@@ -15,6 +15,7 @@ Future main() async {
     print("  Software Version: ${state.vehicleState.carVersion}");
     print(
         "  Location: ${state.driveState.latitude} LAT, ${state.driveState.longitude} LONG");
+    print("  Tokens: ${state.tokens}");
 
     if (stdout.hasTerminal) {
       print("  Option Codes");
