@@ -20,8 +20,12 @@ class TeslaClientImpl extends TeslaHttpClient {
     Map<String, dynamic> body,
     bool tesla = false,
   }) async {
-    var uri = endpoints.ownersApiUrl.resolve(url);
-    if (tesla) uri = endpoints.teslaApiUl.resolve(url);
+    Uri uri;
+    if (tesla) {
+      uri = endpoints.teslaApiUl.resolve(url);
+    } else {
+      uri = endpoints.ownersApiUrl.resolve(url);
+    }
 
     var request = new HttpRequest();
     request.open(body == null ? "GET" : "POST", uri.toString());
