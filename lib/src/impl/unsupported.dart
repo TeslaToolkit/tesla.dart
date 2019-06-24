@@ -93,4 +93,9 @@ class TeslaClientImpl implements TeslaClient {
   Future close() {
     throw "This platform is not supported.";
   }
+
+  @override
+  Future<List<Supercharger>> listSuperchargers() {
+    throw "This platform is not supported.";
+  }
 }

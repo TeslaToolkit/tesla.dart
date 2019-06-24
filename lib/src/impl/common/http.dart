@@ -133,29 +133,53 @@ abstract class TeslaHttpClient implements TeslaClient {
   }
 
   @override
+  Future<List<Supercharger>> listSuperchargers() async {
+    var chargers = <Supercharger>[];
+
+    var result = await getJsonList("all-locations", tesla: true, standard: false);
+
+    for (var item in result) {
+      chargers.add(new Supercharger(this, item));
+    }
+
+    return chargers;
+  }
+
+  @override
   Future<Vehicle> wake(int id) async {
     return new Vehicle(
         this, await getJsonMap("vehicles/${id}/wake_up", body: {}));
   }
 
-  Future<Map<String, dynamic>> getJsonMap(String url,
-      {Map<String, dynamic> body,
-      String extract: "response",
-      bool standard: true}) async {
+  Future<Map<String, dynamic>> getJsonMap(
+    String url, {
+    Map<String, dynamic> body,
+    String extract: "response",
+    bool standard: true,
+    bool tesla = false,
+  }) async {
     return (await sendHttpRequest(_apiUrl(url, standard),
-        body: body, extract: extract)) as Map<String, dynamic>;
+        body: body, extract: extract, tesla: tesla)) as Map<String, dynamic>;
   }
 
-  Future<List<dynamic>> getJsonList(String url,
-      {Map<String, dynamic> body,
-      String extract: "response",
-      bool standard: true}) async {
+  Future<List<dynamic>> getJsonList(
+    String url, {
+    Map<String, dynamic> body,
+    String extract: "response",
+    bool standard: true,
+    bool tesla = false,
+  }) async {
     return (await sendHttpRequest(_apiUrl(url, standard),
-        body: body, extract: extract)) as List<dynamic>;
+        body: body, extract: extract, tesla: tesla)) as List<dynamic>;
   }
 
-  Future<dynamic> sendHttpRequest(String url,
-      {bool needsToken: true, String extract, Map<String, dynamic> body});
+  Future<dynamic> sendHttpRequest(
+    String url, {
+    bool needsToken: true,
+    String extract,
+    Map<String, dynamic> body,
+    bool tesla = false,
+  });
 
   String _apiUrl(String path, bool standard) =>
       standard ? "/api/1/${path}" : path;

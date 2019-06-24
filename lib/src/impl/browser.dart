@@ -13,11 +13,20 @@ class TeslaClientImpl extends TeslaHttpClient {
       : super(email, password, token, endpoints);
 
   @override
-  Future<dynamic> sendHttpRequest(String url,
-      {bool needsToken: true,
-      String extract,
-      Map<String, dynamic> body}) async {
-    var uri = endpoints.ownersApiUrl.resolve(url);
+  Future<dynamic> sendHttpRequest(
+    String url, {
+    bool needsToken: true,
+    String extract,
+    Map<String, dynamic> body,
+    bool tesla = false,
+  }) async {
+    Uri uri;
+    if (tesla) {
+      uri = endpoints.teslaApiUl.resolve(url);
+    } else {
+      uri = endpoints.ownersApiUrl.resolve(url);
+    }
+
     var request = new HttpRequest();
     request.open(body == null ? "GET" : "POST", uri.toString());
     if (needsToken) {
