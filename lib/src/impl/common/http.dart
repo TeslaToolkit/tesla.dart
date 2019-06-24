@@ -136,7 +136,7 @@ abstract class TeslaHttpClient implements TeslaClient {
   Future<List<Supercharger>> listSuperchargers() async {
     var chargers = <Supercharger>[];
 
-    var result = await getJsonList("all-locations", extract: null, tesla: true, standard: false);
+    var result = await getJsonList("all-locations", tesla: true, standard: false);
 
     for (var item in result) {
       chargers.add(new Supercharger(this, item));
